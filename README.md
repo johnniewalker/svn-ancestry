@@ -117,13 +117,13 @@ In big repositories, with lots of history, it is probably a little time-consumin
 
 ## But, how do we trace the ancestors *programmatically*?
 
-The [`--xml` option](http://svnbook.red-bean.com/en/1.7/svn.ref.svn.html#svn.ref.svn.sw.xml) prints the log output in xml format. This makes it easier for a machine to understand it.
+The [`--xml` option](http://svnbook.red-bean.com/en/1.7/svn.ref.svn.html#svn.ref.svn.sw.xml) prints the `svn log` output in xml format. This makes it easier for a machine to understand it.
 
-What we need is some tool to lift the pertinent ancestory path data from the xml stream that is output from a `svn log` command on a repository file. If this is done for each file in the project-to-be-extracted then we can build a set of paths that need to be `include`d in the `svndumpfilter` process that is run to filter the dump file.
+What we need is some tool to lift the pertinent ancestory path data from the xml stream that is output from a `svn log` command on a given repository file. If this is done for each file in the project-to-be-extracted then we can build a set of paths that need to be `included` in the `svndumpfilter` process that is run to filter the dump file.
 
 # Does such a tool or solution already exist?
 
-
+I don't know. I couln't find it. If it doesn't exist I ought to make it.
 
 
 
