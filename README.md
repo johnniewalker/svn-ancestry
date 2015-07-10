@@ -9,7 +9,7 @@ I want that component's code to reside in a new, standalone, Subversion® reposi
 
 # Research Search Missions
 
-I have tried to find a tool that helps this process. In order to understand my thought process. Here are the queries for some search  that I have done whilst trying to solve this problem:
+I have tried to find a tool that helps this process. In order to understand my thought process (and therefore those of the potential users of the tool that I am making), here are the queries for some search  that I have done whilst trying to solve this problem:
 
 * static analyse some php that you want to hive off into a different project 
 * static analysis some php that you want to hive off into a different project
