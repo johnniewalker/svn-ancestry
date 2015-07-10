@@ -95,7 +95,7 @@ So, we are 90% there towards our goal of extracting our component into its own S
 
 This means that, when we run the new project through the filter, in order to preserve their commit histories, we must not only `include` the project files at the current revision, but also `include` the paths of their ancestors. 
 
-The question is: **How do we programmatically determine the paths of those ancestors?**
+The question is: **How do we determine the paths of those ancestors?**
 
 Also another issue is highlighted in the final paragraph of that [same section](http://svnbook.red-bean.com/en/1.8/svn.reposadmin.maint.html#svn.reposadmin.maint.filtering):
 
@@ -103,7 +103,7 @@ Also another issue is highlighted in the final paragraph of that [same section](
 
 So, in order to perform a successful [`svnadmin load`](http://svnbook.red-bean.com/en/1.7/svn.ref.svnadmin.c.load.html) of the selected commits, we must ensure that there is an appropriate directory structure for any svn-added files. For any file to be added, the parent directory must exist already or a svn add command must exist somewhere in the preceeding commit history.
 
-The question is: **How do we programmatically determine the paths of those parent directories?**
+The question is: **How do we determine the paths of those parent directories?**
 
 
 
