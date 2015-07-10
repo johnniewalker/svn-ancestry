@@ -1,5 +1,5 @@
 # svn-ancestry
-Trace the ancestry of a versioned file in a Subversion® repository and return a list of filenames that represent its various incarnations, across svn-copies, since its oldest ancestor was first svn-added.
+A tool to trace the ancestry of a versioned file in a Subversion® repository and return a list of filenames that represent its various incarnations, across svn-copies, since its oldest ancestor was first svn-added.
 
 # Business Case
 
@@ -68,9 +68,9 @@ In order to understand my thought process (and therefore those of the potential 
  
 ### Some Pages of Interest During Research
 
-#### Subversion Documentation
+#### Subversion® Documentation
 
-* [Subversion FAQ's](https://subversion.apache.org/faq.html)
+* [Subversion® FAQ's](https://subversion.apache.org/faq.html)
 * [Svn Book Redbean - Filtering Repository History](http://svnbook.red-bean.com/en/1.8/svn.reposadmin.maint.html#svn.reposadmin.maint.filtering)
 * [svn log](http://svnbook.red-bean.com/en/1.7/svn.ref.svn.c.log.html)
  
@@ -81,7 +81,7 @@ In order to understand my thought process (and therefore those of the potential 
 
 ## Candidate Solution
 
-Through my research, I have learned that one can follow the instructions, detailed under [Filtering Repository History in the Version Control with Subversion Book](http://svnbook.red-bean.com/en/1.8/svn.reposadmin.maint.html#svn.reposadmin.maint.filtering), to hive off a part of a repository into a new one. 
+Through my research, I have learned that one can follow the instructions, detailed under [Filtering Repository History in the Version Control with Subversion® Book](http://svnbook.red-bean.com/en/1.8/svn.reposadmin.maint.html#svn.reposadmin.maint.filtering), to hive off a part of a repository into a new one. 
 
 In essence, you create a [dump of an existing repository](http://svnbook.red-bean.com/en/1.7/svn.ref.svnadmin.c.dump.html) and then use [`svndumpfilter`](http://svnbook.red-bean.com/en/1.7/svn.ref.svndumpfilter.html) to purge all but a choice set of commits from the dump file which can be imported into a new repository. 
 
@@ -89,7 +89,7 @@ It is even possible to do some string manipulation on the paths in the resulting
 
 As you stream data through `svndumpfilter`, you can either `include` or `exclude` certain paths (or patterns of paths) depending on situation. 
 
-So, we are 90% there towards our goal of extracting our component into its own Subversion repository. But, the documentation states an issue in the penultimate paragraph of [Filtering Repository History](http://svnbook.red-bean.com/en/1.8/svn.reposadmin.maint.html#svn.reposadmin.maint.filtering):
+So, we are 90% there towards our goal of extracting our component into its own Subversion® repository. But, the documentation states an issue in the penultimate paragraph of [Filtering Repository History](http://svnbook.red-bean.com/en/1.8/svn.reposadmin.maint.html#svn.reposadmin.maint.filtering):
 
 > ...Also, copied paths can give you some trouble. Subversion supports copy operations in the repository, where a new path is created by copying some already existing path. It is possible that at some point in the lifetime of your repository, you might have copied a file or directory from some location that svndumpfilter is excluding, to a location that it is including. To make the dump data self-sufficient, svndumpfilter needs to still show the addition of the new path—including the contents of any files created by the copy—and not represent that addition as a copy from a source that won't exist in your filtered dump data stream. But because the Subversion repository dump format shows only what was changed in each revision, the contents of the copy source might not be readily available. If you suspect that you have any copies of this sort in your repository, you might want to rethink your set of included/excluded paths, perhaps **including the paths that served as sources of your troublesome copy operations, too**...
 
