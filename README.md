@@ -123,7 +123,7 @@ What we need is some tool to lift the pertinent ancestory path data from the xml
 
 # Does such a tool or solution already exist?
 
-I don't know. I couln't find it. If it doesn't exist I ought to make it.
+I don't know. I couldn't find it. If it doesn't exist I ought to make it.
 
 
 
