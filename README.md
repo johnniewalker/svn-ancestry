@@ -79,5 +79,36 @@ In order to understand my thought process (and therefore those of the potential 
 * [How to track the full log of moved files/dirs in SVN? ](http://stackoverflow.com/questions/5202952/how-to-track-the-full-log-of-moved-files-dirs-in-svn/5209310)
 * [How can I view all historical changes to a file in SVN](http://stackoverflow.com/questions/282802/how-can-i-view-all-historical-changes-to-a-file-in-svn)
 
+## Candidate Solution
+
+Through my research, I have learned that one can follow the instructions, detailed under [Filtering Repository History in the Version Control with Subversion Book](http://svnbook.red-bean.com/en/1.8/svn.reposadmin.maint.html#svn.reposadmin.maint.filtering), to hive off a part of a repository into a new one. 
+
+In essence, you create a [dump of an existing repository](http://svnbook.red-bean.com/en/1.7/svn.ref.svnadmin.c.dump.html) and then use [`svndumpfilter`](http://svnbook.red-bean.com/en/1.7/svn.ref.svndumpfilter.html) to purge all but a choice set of commits from the dump file which can be imported into a new repository. 
+
+It is even possible to do some string manipulation on the paths in the resulting dump file to strip out parent directories and hack them into shape.
+
+As you stream data through `svndumpfilter`, you can either `include` or `exclude` certain paths (or patterns of paths) depending on situation. 
+
+So, we are 90% there towards our goal of extracting our component into its own Subversion repository. But, the documentation states an issue in the penultimate paragraph of [Filtering Repository History](http://svnbook.red-bean.com/en/1.8/svn.reposadmin.maint.html#svn.reposadmin.maint.filtering):
+
+> ...Also, copied paths can give you some trouble. Subversion supports copy operations in the repository, where a new path is created by copying some already existing path. It is possible that at some point in the lifetime of your repository, you might have copied a file or directory from some location that svndumpfilter is excluding, to a location that it is including. To make the dump data self-sufficient, svndumpfilter needs to still show the addition of the new path—including the contents of any files created by the copy—and not represent that addition as a copy from a source that won't exist in your filtered dump data stream. But because the Subversion repository dump format shows only what was changed in each revision, the contents of the copy source might not be readily available. If you suspect that you have any copies of this sort in your repository, you might want to rethink your set of included/excluded paths, perhaps **including the paths that served as sources of your troublesome copy operations, too**...
+
+This means that, when we run the new project through the filter, in order to preserve their commit histories, we must not only `include` the project files at the current revision, but also `include` the paths of their ancestors. 
+
+The question is: **How do we programmatically determine the paths of those ancestors?**
+
+Also another issue is highlighted in the final paragraph of that [same section](http://svnbook.red-bean.com/en/1.8/svn.reposadmin.maint.html#svn.reposadmin.maint.filtering):
+
+> ...Finally, svndumpfilter takes path filtering quite literally. If you are trying to copy the history of a project rooted at trunk/my-project and move it into a repository of its own, you would, of course, use the svndumpfilter include command to keep all the changes in and under trunk/my-project. But the resultant dump file makes no assumptions about the repository into which you plan to load this data. Specifically, the dump data might begin with the revision that added the trunk/my-project directory, but it will not contain directives that would create the trunk directory itself (because trunk doesn't match the include filter). You'll need to make sure that any directories that the new dump stream expects to exist actually do exist in the target repository before trying to load the stream into that repository.
+
+So, in order to perform a successful [`svnadmin load`](http://svnbook.red-bean.com/en/1.7/svn.ref.svnadmin.c.load.html) of the selected commits, we must ensure that there is an appropriate directory structure for any svn-added files. For any file to be added, the parent directory must exist already or a svn add command must exist somewhere in the preceeding commit history.
+
+The question is: **How do we programmatically determine the paths of those parent directories?**
+
+
+
+
+
+
 
 
