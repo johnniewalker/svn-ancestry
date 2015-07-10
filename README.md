@@ -115,7 +115,7 @@ The information is all there in the output of `svn log`.
 
 In big repositories, with lots of history, it is probably a little time-consuming to trace this information manually. 
 
-## But, how do we trace the ancestors *programmatically*?
+## So, how do we trace the ancestors *programmatically*?
 
 The [`--xml` option](http://svnbook.red-bean.com/en/1.7/svn.ref.svn.html#svn.ref.svn.sw.xml) prints the `svn log` output in xml format. This makes it easier for a machine to understand it.
 
