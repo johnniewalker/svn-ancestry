@@ -105,7 +105,7 @@ So, in order to perform a successful [`svnadmin load`](http://svnbook.red-bean.c
 
 The question is: **How do we determine the paths of those parent directories?**
 
-# How do we determine the paths of a file's ancestors?
+# How do we determine the paths of a file's ancestors to use in the `include` arguments for `svndumpfilter`?
 
 It is possible to run the [`svn log`](http://svnbook.red-bean.com/en/1.7/svn.ref.svn.c.log.html) command on a repository url. This would return its commit history. Using the [`--verbose` option](http://svnbook.red-bean.com/en/1.7/svn.ref.svn.html#svn.ref.svn.sw.verbose) ensures that we can see the paths affected by any given commit in that history.
 
