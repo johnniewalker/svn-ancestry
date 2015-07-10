@@ -105,8 +105,23 @@ So, in order to perform a successful [`svnadmin load`](http://svnbook.red-bean.c
 
 The question is: **How do we determine the paths of those parent directories?**
 
+# How do we determine the paths of those ancestors?
 
+It is possible to run the [`svn log`](http://svnbook.red-bean.com/en/1.7/svn.ref.svn.c.log.html) command on a repository url. This would return its commit history. Using the [`--verbose` option](http://svnbook.red-bean.com/en/1.7/svn.ref.svn.html#svn.ref.svn.sw.verbose) ensures that we can see the paths affected by any given commit in that history.
 
+We can ignore occassions when the file is modified. We are really interested in tracing the history up to the point of when that file was svn-added to the repository. Furthermore, if that file was added using svn-copy (or any effective svn-move) command we want to trace the ancestry of that 'source file' too.
+
+The information is all there in the output of `svn log`. 
+
+In big repositories, with lots of history, it is probably a little time-consuming to trace this information manually. 
+
+## But, how do we trace the ancestors *programmatically*?
+
+The [`--xml` option](http://svnbook.red-bean.com/en/1.7/svn.ref.svn.html#svn.ref.svn.sw.xml) prints the log output in xml format. This makes it easier for a machine to understand it.
+
+What we need is some tool to lift the pertinent ancestory path data from the xml stream that is output from a `svn log` command on a repository file. If this is done for each file in the project-to-be-extracted then we can build a set of paths that need to be `include`d in the `svndumpfilter` process that is run to filter the dump file.
+
+# Does such a tool or solution already exist?
 
 
 
