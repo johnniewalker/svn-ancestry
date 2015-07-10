@@ -7,11 +7,11 @@ As a software developer, I have a large project whose code is stored in a [Subve
 
 I want that component's code to reside in a new, standalone, Subversion® repository. But, I also want to retain the version history of all the files in that component so that I can read the log and commit messages that explain how and why it came to be in its current form.
 
-# Research Search Missions
+## Research Search Missions
 
 I have tried to find a tool that helps this process. 
 
-## Google Searches 
+### Google Searches 
 
 In order to understand my thought process (and therefore those of the potential users of the tool that I am making), here are the queries for some search  that I have done whilst trying to solve this problem:
 
@@ -66,15 +66,15 @@ In order to understand my thought process (and therefore those of the potential 
 * ancestry
 * Subversion
  
-## Some Pages of Interest During Research
+### Some Pages of Interest During Research
 
-### Subversion Documentation
+#### Subversion Documentation
 
 * [Subversion FAQ's](https://subversion.apache.org/faq.html)
 * [Svn Book Redbean - Filtering Repository History](http://svnbook.red-bean.com/en/1.8/svn.reposadmin.maint.html#svn.reposadmin.maint.filtering)
 * [svn log](http://svnbook.red-bean.com/en/1.7/svn.ref.svn.c.log.html)
  
-## Stackoverflow Questions
+#### Stackoverflow Questions
 
 * [How to track the full log of moved files/dirs in SVN? ](http://stackoverflow.com/questions/5202952/how-to-track-the-full-log-of-moved-files-dirs-in-svn/5209310)
 * [How can I view all historical changes to a file in SVN](http://stackoverflow.com/questions/282802/how-can-i-view-all-historical-changes-to-a-file-in-svn)
