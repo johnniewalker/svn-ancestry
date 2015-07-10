@@ -83,11 +83,11 @@ In order to understand my thought process (and therefore those of the potential 
 
 Through my research, I have learned that one can follow the instructions, detailed under [Filtering Repository History in the Version Control with Subversion® Book](http://svnbook.red-bean.com/en/1.8/svn.reposadmin.maint.html#svn.reposadmin.maint.filtering), to hive off a part of a repository into a new one. 
 
-In essence, you create a [dump of an existing repository](http://svnbook.red-bean.com/en/1.7/svn.ref.svnadmin.c.dump.html) and then use [`svndumpfilter`](http://svnbook.red-bean.com/en/1.7/svn.ref.svndumpfilter.html) to purge all but a choice set of commits from the dump file which can be imported into a new repository. 
-
-It is even possible to do some string manipulation on the paths in the resulting dump file to strip out parent directories and hack them into shape.
+In essence, you create a [dump of an existing repository](http://svnbook.red-bean.com/en/1.7/svn.ref.svnadmin.c.dump.html) and then use [`svndumpfilter`](http://svnbook.red-bean.com/en/1.7/svn.ref.svndumpfilter.html) to purge all but a choice set of commits from the dump file which can be imported into a new repository (using `svnadmin load`). 
 
 As you stream data through `svndumpfilter`, you can either `include` or `exclude` certain paths (or patterns of paths) depending on situation. 
+
+Before loading the commits into a new repository, one can optionally open up the resulting dump file in a text editor to do some string manipulation on the paths to strip out parent directories and hack them into shape.
 
 So, we are 90% there towards our goal of extracting our component into its own Subversion® repository. But, the documentation states an issue in the penultimate paragraph of [Filtering Repository History](http://svnbook.red-bean.com/en/1.8/svn.reposadmin.maint.html#svn.reposadmin.maint.filtering):
 
