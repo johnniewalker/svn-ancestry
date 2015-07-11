@@ -78,6 +78,7 @@ In order to understand my thought process (and therefore those of the potential 
 
 * [How to track the full log of moved files/dirs in SVN? ](http://stackoverflow.com/questions/5202952/how-to-track-the-full-log-of-moved-files-dirs-in-svn/5209310)
 * [How can I view all historical changes to a file in SVN](http://stackoverflow.com/questions/282802/how-can-i-view-all-historical-changes-to-a-file-in-svn)
+* [Output of svn log -v](http://stackoverflow.com/questions/4729921/output-of-svn-log-v) 
 
 ## Candidate Solution
 
