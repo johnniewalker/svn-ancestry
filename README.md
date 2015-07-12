@@ -100,7 +100,7 @@ In order to understand my thought process (and therefore those of the potential 
 * [How do I dump one project out of a SVN repository which contains multiple projects](http://stackoverflow.com/questions/337024/how-do-i-dump-one-project-out-of-a-svn-repository-which-contains-multiple-projec)
 * [How to display a specific user's commits in svn log?](http://stackoverflow.com/questions/4499910/how-to-display-a-specific-users-commits-in-svn-log)
     * [Solved by an elegant xml parser written in Python](http://stackoverflow.com/a/4500182/205814)
- * [XML end element is read twice using XMLReader with PHP](http://stackoverflow.com/questions/5060936/xml-end-element-is-read-twice-using-xmlreader-with-php) (an example of STDIN being parsed by XMLReader)
+* [XML end element is read twice using XMLReader with PHP](http://stackoverflow.com/questions/5060936/xml-end-element-is-read-twice-using-xmlreader-with-php) (an example of STDIN being parsed by XMLReader)
  
 
 ## Candidate Solution
