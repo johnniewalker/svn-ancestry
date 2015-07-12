@@ -11,7 +11,7 @@ I want that component's code to reside in a new, standalone, Subversion® reposi
 
 ## Research Log
 
-In order to understand my thought process (and therefore those of the potential users of the tool that I am making), I have noted the queries for some searches that I have done whilst trying to solve this problem. See the [[Research Log|ResearchLog]] to get an idea of the context from which this tool was borne.
+In order to understand my thought process (and therefore those of the potential users of the tool that I am making), I have noted the queries for some searches that I have done whilst trying to solve this problem. See the [Research Log](https://github.com/johnniewalker/svn-ancestry/wiki/ResearchLog) to get an idea of the context from which this tool was borne.
 
 ## Candidate Solution
 
