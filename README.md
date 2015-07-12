@@ -66,6 +66,23 @@ In order to understand my thought process (and therefore those of the potential 
 * ancestry
 * Subversion
 * xmlstarlet
+* cli Laravel
+* intro* laravel podcast 
+* intro* laravel podcast Laravel Philosophy
+* podcast Laravel Philosophy 
+* Parse the output of `svn log` to list only the paths of previous incarnations of a certain file's history
+* php xml parser
+* XML Pull parser 
+* what is "XML Pull parser" 
+* php XML Pull parser 
+* php XMLReader piped stream 
+* handling piped data php cli 
+* handling piped xml data php cli 
+* onions for hotdogs
+* XMLReader standard input
+* XMLReader standard input STDIN
+* php XMLReader standard input STDIN
+* can php XMLReader read STDIN 
  
 ### Some Pages of Interest During Research
 
@@ -83,6 +100,7 @@ In order to understand my thought process (and therefore those of the potential 
 * [How do I dump one project out of a SVN repository which contains multiple projects](http://stackoverflow.com/questions/337024/how-do-i-dump-one-project-out-of-a-svn-repository-which-contains-multiple-projec)
 * [How to display a specific user's commits in svn log?](http://stackoverflow.com/questions/4499910/how-to-display-a-specific-users-commits-in-svn-log)
     * [Solved by an elegant xml parser written in Python](http://stackoverflow.com/a/4500182/205814)
+ * [XML end element is read twice using XMLReader with PHP](http://stackoverflow.com/questions/5060936/xml-end-element-is-read-twice-using-xmlreader-with-php) (an example of STDIN being parsed by XMLReader)
  
 
 ## Candidate Solution
