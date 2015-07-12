@@ -1,5 +1,8 @@
-# svn-ancestry
-A tool to trace the ancestry of a versioned file in a Subversion® repository and return a list of filenames that represent its various incarnations, across svn-copies, since its oldest ancestor was first svn-added.
+# svn-exodus
+
+Tools to help extract one [Subversion®](https://subversion.apache.org/) repository from another.
+
+* svn-ancestry - A tool to trace the ancestry of a versioned file in a Subversion® repository and return a list of filenames that represent its various incarnations, across svn-copies, since its oldest ancestor was first svn-added.
 
 # Business Case - The Problem
 
