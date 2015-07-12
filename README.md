@@ -7,101 +7,11 @@ As a software developer, I have a large project whose code is stored in a [Subve
 
 I want that component's code to reside in a new, standalone, Subversion® repository (to potentially be migrated into a `git` repository). But, I also want to retain the version history of all the files in that component so that I can read the log and commit messages that explain how and why it came to be in its current form.
 
-## Research Search Missions
 
-I have tried to find a tool that helps this process. 
 
-### Internet Searches 
+## Research Log
 
-In order to understand my thought process (and therefore those of the potential users of the tool that I am making), here are the queries for some searches that I have done whilst trying to solve this problem:
-
-* static analyse some php that you want to hive off into a different project 
-* static analysis some php that you want to hive off into a different project
-* clone subversion repository for just one component 
-* cut sub project out of subversion repo
-* svn dump only specific files
-* svn log
-* extracting component pattern 
-* extracting component
-* detect leaf php scripts
-* php dependency management
-* how does php dependency fit in 
-* how does composer it in
-* svn filter out all but one directory
-* cutting project out of repository svndumpfilter 
-* --preserve-revprops 
-* "--preserve-revprops" git 
-* You'll need to make sure that any directories that the new dump stream expects to exist actually do exist in the target repository before trying to load the stream into that repository. 
-* svn filter create the parent directories 
-* svn log command
-* dos sort lines in fiel unique 
-* svn get complete history of a directory
-* svn get complete history of a directory copies from other parts of the repo
-* svn get complete history of a directory copies from other parts of the repo 
-* svn copy
-* svn copy and rename
-* seeing history of svn copy and renames
-* svn log 
-* svn log machine readable changed paths 
-* svn historian
-* svn trace the history of a file copyfrom-path
-* svn trace the history of a file "copyfrom-path"
-* xml processor svn trace thehistory of a file "copyfrom-path"
-* xml processor svn trace the history of a file "copy from-path"
-* linked list php
-* doubly linked list 
-* svn migration tools 
-* svn migration tools to git 
-* xml stream processing
-* php xml stream processing 
-* php xml stream processing zend framework
-* framework for writing php cli applications 
-* streaming to php cli application
-* streaming to php cli application symphony
-* svn incarnation
-* use of subversion in project names
-* svn history
-* svn trace 
-* svn ancestry 
-* ancestry
-* Subversion
-* xmlstarlet
-* cli Laravel
-* intro* laravel podcast 
-* intro* laravel podcast Laravel Philosophy
-* podcast Laravel Philosophy 
-* Parse the output of `svn log` to list only the paths of previous incarnations of a certain file's history
-* php xml parser
-* XML Pull parser 
-* what is "XML Pull parser" 
-* php XML Pull parser 
-* php XMLReader piped stream 
-* handling piped data php cli 
-* handling piped xml data php cli 
-* onions for hotdogs
-* XMLReader standard input
-* XMLReader standard input STDIN
-* php XMLReader standard input STDIN
-* can php XMLReader read STDIN 
- 
-### Some Pages of Interest During Research
-
-#### Subversion® Documentation
-
-* [Subversion® FAQ's](https://subversion.apache.org/faq.html)
-* [Svn Book Redbean - Filtering Repository History](http://svnbook.red-bean.com/en/1.8/svn.reposadmin.maint.html#svn.reposadmin.maint.filtering)
-* [svn log](http://svnbook.red-bean.com/en/1.7/svn.ref.svn.c.log.html)
- 
-#### Stackoverflow Questions
-
-* [How to track the full log of moved files/dirs in SVN? ](http://stackoverflow.com/questions/5202952/how-to-track-the-full-log-of-moved-files-dirs-in-svn/5209310)
-* [How can I view all historical changes to a file in SVN](http://stackoverflow.com/questions/282802/how-can-i-view-all-historical-changes-to-a-file-in-svn)
-* [Output of svn log -v](http://stackoverflow.com/questions/4729921/output-of-svn-log-v) 
-* [How do I dump one project out of a SVN repository which contains multiple projects](http://stackoverflow.com/questions/337024/how-do-i-dump-one-project-out-of-a-svn-repository-which-contains-multiple-projec)
-* [How to display a specific user's commits in svn log?](http://stackoverflow.com/questions/4499910/how-to-display-a-specific-users-commits-in-svn-log)
-    * [Solved by an elegant xml parser written in Python](http://stackoverflow.com/a/4500182/205814)
-* [XML end element is read twice using XMLReader with PHP](http://stackoverflow.com/questions/5060936/xml-end-element-is-read-twice-using-xmlreader-with-php) (an example of STDIN being parsed by XMLReader)
- 
+In order to understand my thought process (and therefore those of the potential users of the tool that I am making), I have noted the queries for some searches that I have done whilst trying to solve this problem. See the [[Research Log|ResearchLog]] to get an idea of the context from which this tool was borne.
 
 ## Candidate Solution
 
