@@ -2,7 +2,7 @@
 
 Tools to help extract one [Subversion®](https://subversion.apache.org/) repository from another.
 
-* svn-ancestry - A tool to trace the ancestry of a versioned file in a Subversion® repository and return a list of filenames that represent its various incarnations, across svn-copies, since its oldest ancestor was first svn-added.
+* [svn-ancestry](https://github.com/svn-exodus/svn-ancestry) - A tool to trace the ancestry of a versioned file in a Subversion® repository and return a list of filenames that represent its various incarnations, across svn-copies, since its oldest ancestor was first svn-added.
 
 # Business Case - The Problem
 
@@ -48,7 +48,7 @@ This depends on the result of the previous question. It depends on the file's pa
 
 It is possible to run the [`svn log`](http://svnbook.red-bean.com/en/1.7/svn.ref.svn.c.log.html) command on a repository url. This would return its commit history. Using the [`--verbose` option](http://svnbook.red-bean.com/en/1.7/svn.ref.svn.html#svn.ref.svn.sw.verbose) ensures that we can see the paths affected by any given commit in that history.
 
-We can ignore occassions when the file is modified. We are really interested in tracing the history up to the point of when that file was svn-added to the repository. Furthermore, if that file was added using svn-copy (or any effective svn-move) command we want to trace the ancestry of that 'source file' too.
+We can ignore occassions when the file is modified. We are really interested in tracing the history up to the point when that file was svn-added to the repository. Furthermore, if that file was added using svn-copy (or any effective svn-move) command we want to trace the ancestry of that 'source file' too.
 
 The information is all there in the output of `svn log`. 
 
