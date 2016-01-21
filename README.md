@@ -8,7 +8,7 @@ Tools to help extract one [Subversion®](https://subversion.apache.org/) reposit
 
 As a software developer, I have a large project whose code is stored in a [Subversion®](https://subversion.apache.org/) repository. Over the years I have refactored the code many times and teased it into a modular architecture made up of various components. One component has matured to the extent that it really ought to be a standalone project in itself. 
 
-I want that component's code to reside in a new, standalone, Subversion® repository (to potentially be migrated into a `git` repository). But, I also want to retain the version history of all the files in that component so that I can read the log and commit messages that explain how and why it came to be in its current form.
+I want that component's code to reside in a new, standalone, Subversion® repository (to potentially be migrated into a `git` repository). But, I also want to retain the version history of all the files in that component so that I can read the log and the commit messages that explain how and why it came to be in its current form.
 
 
 
